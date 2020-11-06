@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "X0WM2jvnmyaawoNJR1fm8w9mNl3UJsTBT74bhuoza9JTW6v+wbUegwzxNtcpj5Agrsq03SWlNldxYl4TKlMY6g==",
+  "success": true,
+  "projectFilePath": "C:\\Pessoal\\Estudo\\Panasonic\\OrderService\\OrderService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gamorim\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
