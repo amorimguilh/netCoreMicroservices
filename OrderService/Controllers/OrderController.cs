@@ -27,7 +27,7 @@ namespace OrderService.Controllers
             // Consume another microservice to get the working coupons
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:5000/");
+                client.BaseAddress = new Uri("http://couponapi/");
                 //HTTP GET
                 var result = await client.GetAsync("coupon");
                 

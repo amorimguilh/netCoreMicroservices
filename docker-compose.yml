@@ -1,0 +1,48 @@
+version: '3.4'
+
+networks:
+  dockerapi-dev:
+    driver: bridge
+
+services:
+  orderapi:
+    image: orderservice
+    depends_on:
+      - "couponapi"
+    build:
+      context: ./OrderService
+      dockerfile: Dockerfile
+    ports:
+      - "3201:80"
+    networks:
+      - dockerapi-dev
+
+  couponapi:
+    image: couponservice
+    depends_on:
+      - "postgres_image"
+    build:
+      context: ./CouponService
+      dockerfile: Dockerfile
+    ports:
+      - "3200:80"
+    environment:
+      DB_CONNECTION_STRING: "Host=postgres_image;port=5432;Database=postgres;Username=postgres;Password=mysecretpassword"
+    networks:
+      - dockerapi-dev
+
+  postgres_image:
+    image: postgres:latest
+    ports:
+      - "5432"
+    restart: always
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: postgres
+    networks: 
+      - dockerapi-dev
+volumes:
+  pgdata:

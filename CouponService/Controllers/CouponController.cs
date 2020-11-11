@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CouponService.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -11,22 +11,22 @@ namespace CouponService.Controllers
     [Route("[controller]")]
     public class CouponController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<CouponController> _logger;
+        private readonly CouponContext _context;
 
-        public CouponController(ILogger<CouponController> logger)
+        public CouponController(ILogger<CouponController> logger, CouponContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return Summaries;
+            IEnumerable<string> result = null;
+                result = _context.Coupons.Select(cp => cp.Code);
+               
+            return result;
         }
     }
 }

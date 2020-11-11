@@ -20,3 +20,4 @@ C:\Pessoal\Estudo\Panasonic\OrderService\obj\Debug\netcoreapp3.1\OrderService.pd
 C:\Pessoal\Estudo\Panasonic\OrderService\obj\Debug\netcoreapp3.1\OrderService.genruntimeconfig.cache
 C:\Pessoal\Estudo\Panasonic\OrderService\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Pessoal\Estudo\Panasonic\OrderService\obj\Debug\netcoreapp3.1\OrderService.csproj.CopyComplete
+C:\Pessoal\Estudo\Panasonic\OrderService\bin\Debug\netcoreapp3.1\nuget.config
