@@ -49,5 +49,13 @@ namespace OrderService.Controllers
 
             return null;
         }
+    
+    
+        [HttpGet("check")]
+        public async Task<string> Check()
+        {
+
+            return await Task.Run(()=> "Working fine");
+        }
     }
 }
