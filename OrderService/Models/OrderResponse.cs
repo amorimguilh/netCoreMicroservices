@@ -1,11 +1,9 @@
-using System.Collections.Generic;
-
 namespace OrderService.Models
 {
-    public class Order 
+    public class OrderResponse
     {
         public string OrderDescription { get; set; }
         public float Value { get; set; }
-        public string ItemDescription { get; set; }
+        public string[] Items { get; set; }
     }    
 }
